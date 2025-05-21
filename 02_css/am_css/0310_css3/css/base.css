@@ -1,0 +1,52 @@
+@charset 'UTF-8';
+/* import 불러오는 순서가 중요함 */
+@import url("https://fonts.googleapis.com/css2?family=Volkhov&display=swap");
+
+:root {
+  font-family: "Volkhov", serif;
+  font-weight: 400;
+  font-style: normal;
+  --mcolor1: green;
+}
+
+body {
+  padding-top: 20rem;
+}
+
+#app > * {
+  border: 1px solid lightgrey;
+  max-width: 1400px;
+  width: calc(100% - 4rem);
+  margin: auto;
+}
+
+/* 가상요소연습 */
+.test1 {
+  content: "";
+  border: 1px solid red;
+  width: 250px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.test1::before,
+.test1::after {
+  background-color: aqua;
+  /* display: inline; */
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.test1::before {
+  content: before;
+  left: -50px;
+}
+.test1::after {
+  content: after;
+  right: -50px;
+}
